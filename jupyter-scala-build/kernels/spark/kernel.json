@@ -1,0 +1,20 @@
+{
+    "display_name": "Scala 2.10 (Spark 1.6)",
+    "language": "scala",
+    "argv": [
+        "/root/local/spark-kernel/bin/spark-kernel",
+        "--profile",
+        "{connection_file}"
+     ],
+     "codemirror_mode": "scala",
+     "env": {
+	"SPARK_OPTS": "--driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M --driver-java-options=-Dlog4j.logLevel=warn",
+        "MAX_INTERPRETER_THREADS": "16",
+	"SPARK_HOME": "/usr/local/spark",
+	"PYTHONPATH": "/usr/local/spark/python:/usr/local/spark/python/lib/py4j-0.8.2.1-src.zip",
+        "SPARK_CONFIGURATION": "spark.cores.max=4",
+        "CAPTURE_STANDARD_OUT": "true",
+        "CAPTURE_STANDARD_ERR": "true",
+        "SEND_EMPTY_OUTPUT": "false"
+     }
+  }
