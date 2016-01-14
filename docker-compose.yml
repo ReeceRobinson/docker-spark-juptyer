@@ -1,0 +1,89 @@
+jupyter:
+  restart: always
+  image: reecerobinson/jupyter-scala:1.5
+  ports:
+  - "8888:8888"
+  - "4041:4040"
+  - "4042:4041"
+  links:
+  - postgres
+  - hadoop
+  - elasticsearch
+  - thriftserver
+  extra_hosts:
+  - "cassandra:172.17.0.7"
+  volumes:
+  - /etc/localtime:/etc/localtime:ro
+  - ~/jupyter-notebooks:/notebooks
+  hostname: jupyter
+
+thriftserver:
+  image: reecerobinson/spark-thrift-server:1.5
+  links:
+  - postgres
+  - hadoop
+  ports:
+  - "4040:4040"
+  - "10000:10000"
+  volumes:
+  - /etc/localtime:/etc/localtime:ro
+  hostname: "thriftserver"
+
+postgres:
+  restart: always
+  image: reecerobinson/postgres-hive:0.13
+  ports:
+  - "5432:5432"
+  volumes_from:
+  - vol-analytics
+  volumes:
+  - /etc/localtime:/etc/localtime:ro
+  hostname: postgres
+
+hadoop:
+  restart: always
+  image: reecerobinson/hadoop:2.6
+  ports:
+  - "9000:9000"
+  - "50070:50070"
+  volumes_from:
+  - vol-analytics
+  volumes:
+  - /etc/localtime:/etc/localtime:ro
+  hostname: hadoop
+
+elasticsearch:
+  restart: always
+  image: elasticsearch:2
+  ports:
+  - "9200:9200"
+  - "9300:9300"
+  volumes:
+  - /etc/localtime:/etc/localtime:ro
+  volumes_from:
+  - vol-analytics
+  command: elasticsearch -Des.network.host=0.0.0.0
+  hostname: "elasticsearch"
+
+kibana:
+  restart: always
+  image: kibana:4
+  ports:
+  - "5601:5601"
+  links:
+  - elasticsearch:elasticsearch
+  volumes:
+  - /etc/localtime:/etc/localtime:ro
+  volumes_from:
+  - vol-analytics
+  hostname: "kibana"
+
+vol-analytics:
+  image: busybox
+  volumes:
+  - /data:/data
+  - /app:/app
+  - /var/lib/postgresql/data:/var/lib/postgresql/data
+  - /usr/share/elasticsearch/data:/usr/share/elasticsearch/data
+  hostname: "vol-analytics"
+
