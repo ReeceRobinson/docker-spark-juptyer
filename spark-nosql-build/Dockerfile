@@ -1,7 +1,7 @@
 From reecerobinson/spark-base:1.6.0
 MAINTAINER docker@reecerobinson.co.nz
 
-COPY 	pom.xml /root
+COPY 	pom.xml /root/pom.xml
 WORKDIR /root
 
 RUN	wget http://ppa.launchpad.net/natecarlson/maven3/ubuntu/pool/main/m/maven3/maven3_3.2.1-0~ppa1_all.deb && \
