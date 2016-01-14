@@ -77,7 +77,7 @@ kibana:
   - vol-analytics
   hostname: "kibana"
 
-elasticsearch:
+cassandra:
   restart: always
   image: cassandra:2
   ports:
