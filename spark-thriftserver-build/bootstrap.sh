@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /apps
 args=("$@")
-sleep 15
+
 # If a 'd' is passed as the first argument then the docker container will present the shell prompt only if run in interactive mode.
 # Otherwise the spark-shell is executed.
 if [[ ${args[0]} == "d" ]]

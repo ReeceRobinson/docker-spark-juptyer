@@ -91,4 +91,5 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provision "shell", inline: "cp /vagrant/docker-compose.yml ."
+  config.vm.provision "shell", inline: "cp -R /vagrant/example-notebooks/ ./jupyter-notebooks"
 end
