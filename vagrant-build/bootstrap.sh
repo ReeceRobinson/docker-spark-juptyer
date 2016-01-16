@@ -11,7 +11,8 @@ deb https://apt.dockerproject.org/repo ubuntu-trusty main
 
 EOF
 
-cat profile >> ~/.profile
+cat /vagrant/profile.txt >> /home/vagrant/.profile
+
 apt-get update -y
 apt-get purge lxc-docker
 apt-cache policy docker-engine
