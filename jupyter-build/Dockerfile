@@ -22,7 +22,8 @@ RUN	pip install py4j && \
 	pip install pandas && \
 	pip install bokeh && \
 	pip install --upgrade scikit-learn && \
-	pip install "ipython[All]"
+	pip install "ipython[All]" && \
+	pip install cassandra-driver
 
 COPY ipython /root/.ipython
 COPY kernels /root/.ipython/kernels
