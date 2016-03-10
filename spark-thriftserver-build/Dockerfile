@@ -1,4 +1,4 @@
-FROM reecerobinson/spark-base:1.6.0
+FROM reecerobinson/spark-base:1.6.1
 MAINTAINER docker@reecerobinson.co.nz
 
 EXPOSE 4040 10000

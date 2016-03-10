@@ -1,7 +1,7 @@
 FROM java:8-jdk
 MAINTAINER docker@reecerobinson.co.nz
 
-ENV APACHE_SPARK_VERSION=1.6.0
+ENV APACHE_SPARK_VERSION=1.6.1
 ENV JAVA_HOME=/usr
 
 RUN 	mkdir /usr/local/spark-src && \

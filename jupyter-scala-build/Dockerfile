@@ -1,7 +1,7 @@
-FROM reecerobinson/jupyter:1.6.0
+FROM reecerobinson/jupyter:1.6.1
 MAINTAINER docker@reecerobinson.co.nz
  
-ENV APACHE_SPARK_VERSION=1.6.0
+ENV APACHE_SPARK_VERSION=1.6.1
 ENV SPARK_HOME /usr/local/spark
 ENV PATH $PATH:$SPARK_HOME/bin
 ENV USE_VAGRANT=false

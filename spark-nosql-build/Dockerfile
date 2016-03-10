@@ -1,4 +1,4 @@
-From reecerobinson/spark-base:1.6.0
+From reecerobinson/spark-base:1.6.1
 MAINTAINER docker@reecerobinson.co.nz
 
 COPY 	pom.xml /root/pom.xml

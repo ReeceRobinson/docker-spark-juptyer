@@ -1,6 +1,6 @@
 jupyter:
   restart: always
-  image: reecerobinson/jupyter-scala:1.6.0
+  image: reecerobinson/jupyter-scala:1.6.1
   ports:
   - "8888:8888"
   - "4041:4040"
@@ -17,7 +17,7 @@ jupyter:
   hostname: jupyter
 
 thriftserver:
-  image: reecerobinson/spark-thrift-server:1.6.0
+  image: reecerobinson/spark-thrift-server:1.6.1
   links:
   - postgres
   - hadoop
