@@ -17,7 +17,7 @@ RUN 	./make-distribution.sh --name hadoop-2.6-hive --tgz -Phadoop-2.6 -Phive -Ph
 WORKDIR /usr/local
 
 RUN 	tar -xzf /usr/local/spark-src/spark-$APACHE_SPARK_VERSION/spark-$APACHE_SPARK_VERSION-bin-hadoop-2.6-hive.tgz && \
-	rm /usr/local/spark-src/spark-1.6.0/spark-$APACHE_SPARK_VERSION-bin-hadoop-2.6-hive.tgz
+	rm /usr/local/spark-src/spark-$APACHE_SPARK_VERSION/spark-$APACHE_SPARK_VERSION-bin-hadoop-2.6-hive.tgz
 
 RUN 	mv /usr/local/spark-$APACHE_SPARK_VERSION-bin-hadoop-2.6-hive spark
 
